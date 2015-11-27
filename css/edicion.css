@@ -1,0 +1,54 @@
+
+*{
+    
+}
+header {
+	background-color: blue; 
+	color: white;
+	float: left;
+	width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+section.barraH{
+    background-color: cadetblue;
+    float: left;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+section.dibujo{
+    background-color: coral;
+}
+
+div.herr{
+    background-color: yellow;
+    float: left;
+    width: 20%;
+    height: 490px;
+}
+
+div.areaT{
+    background-color: greenyellow;
+	float: left;
+	width: 60%;
+	height: 490px;
+}
+
+
+div.prop{
+	background-color: orange;
+    float: right;
+	width: 20%;
+	height: 490px;
+    
+}
+
+footer {
+	background-color: green;
+	color: white;
+    clear: both;
+}
+
