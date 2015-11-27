@@ -1,27 +1,67 @@
+body{
+	padding: 5px;
+}
+
 header {
 	background-color: blue; 
 	color: white;
-	float: left;
-	width: 100%;
+	min-height: 30%;
+	padding: 10px;
 }
 
 section {
 	background-color: yellow;
-	clear: both;
+	height: 500px;
 	float: left;
-	width: 75%;
-	height: 500px;		
+	width: 70%;
+	margin: 5px 5px 5px 0px;
+	padding: 5px 10px;
+			
 }
 
 aside {
 	background-color: orange;
+	height: 500px;
 	float: left;
 	width: 25%;
-	height: 500px;
+	margin: 5px;
+	padding: 5px 10px;
 }
 
 footer {
 	background-color: green;
 	color: white;
 	clear: both;
+	min-height: 10%;
+	padding-left:10px;
+}
+
+.loginButton{
+	margin: 10px 30px;
+	height: 30px;
+	background-color: white;
+	text-align: center;
+}
+
+#headerLogo{
+	height:100px;
+	width: 400px;
+	margin: 5px 10px;
+	background-color: white;
+}
+
+nav{
+	float:right;
+	width: 500px;
+	margin: 70px 10px 5px 10px;
+}
+
+ul{
+	background-color: aliceblue;
+}
+
+li{
+	display: inline;
+	padding-right: 5px;
+	color: black;
 }
