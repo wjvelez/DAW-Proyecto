@@ -1,0 +1,105 @@
+header{
+   background-color: #70A2E8; 
+	color: white;
+	min-height: 20%;
+	padding: 10px;
+}
+
+h1{
+    color: aliceblue;
+}
+
+#img-section{
+    background: #70A2E8;
+    text-align: center;
+    height: 30%;
+}
+
+#perfil-img{
+    width: 15%;
+    height: 50%;
+    background-color: aliceblue;
+    margin: 10px;
+    margin-bottom: 0; 
+}
+
+#editImg{
+    width: 20px;
+    height: 20px;
+    margin-top: 0px;
+}
+
+#input-section{
+    background: #C3C5C9;
+    height: 40%;
+    border-style: solid;
+    border-bottom: none;
+}
+
+footer{
+    padding: 40px;
+    background: #3B6896;
+}
+
+html {
+    height: 90%;
+    margin: 0;
+    background:#3B6896;
+}
+body {
+    height: 90%;
+    margin: 0;
+}
+
+#inputName{
+    
+    margin-left: 60%;
+    margin-top: 0%;
+}
+
+#inputApellido{
+    margin-top: 0%;
+    margin-left: 60%;
+}
+
+#inputUser{
+    
+    margin-left: 20%;
+    margin-top: 0%;
+}
+
+#inputEmail{
+    margin-top: 0%;
+    margin-left: 20%;
+}
+
+nav{
+	float:right;
+	width: 40%;
+	margin: 2% 5% 5% 10%;
+    background-color: aliceblue;
+    
+}
+
+ul{
+	background-color: aliceblue;
+}
+
+li{
+	display: inline;
+	padding-right: 5px;
+	color: black;
+}
+
+#headerLogo{
+	height:100px;
+	width: 400px;
+	margin: 5px 10px;
+	background-color: white;
+}
+
+button{
+    background: #ECA52A;
+    color: white;
+    height: 30px;
+}
