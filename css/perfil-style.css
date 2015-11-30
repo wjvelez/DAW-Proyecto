@@ -1,105 +1,70 @@
-header{
-   background-color: #70A2E8; 
-	color: white;
-	min-height: 20%;
-	padding: 10px;
-}
-
-h1{
-    color: aliceblue;
-}
-
-#img-section{
-    background: #70A2E8;
-    text-align: center;
-    height: 30%;
-}
-
-#perfil-img{
-    width: 15%;
-    height: 50%;
-    background-color: aliceblue;
-    margin: 10px;
-    margin-bottom: 0; 
-}
-
-#editImg{
-    width: 20px;
-    height: 20px;
-    margin-top: 0px;
-}
-
-#input-section{
-    background: #C3C5C9;
-    height: 40%;
-    border-style: solid;
-    border-bottom: none;
-}
-
-footer{
-    padding: 40px;
-    background: #3B6896;
-}
-
-html {
-    height: 90%;
-    margin: 0;
-    background:#3B6896;
-}
-body {
-    height: 90%;
-    margin: 0;
-}
-
-#inputName{
-    
-    margin-left: 60%;
-    margin-top: 0%;
-}
-
-#inputApellido{
-    margin-top: 0%;
-    margin-left: 60%;
-}
-
-#inputUser{
-    
-    margin-left: 20%;
-    margin-top: 0%;
-}
-
-#inputEmail{
-    margin-top: 0%;
-    margin-left: 20%;
+#img-logo{
+    width: 240px;
+    height: 150px;
+    margin: 10%;
+    background-color: beige;
 }
 
 nav{
-	float:right;
-	width: 40%;
-	margin: 2% 5% 5% 10%;
+    margin: 14%;
+    background-color: #D8D8D8;
+}
+
+
+#header{
     background-color: aliceblue;
+}
+
+#section .panel-heading{
+    background: #3B6896;
+    color: aliceblue;
+    text-align: center;
+}
+
+#section .panel-body{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 2%;
+}
+
+#img-user{
+    width: 180px;
+    height: 180px;
+    margin: 1% 0% 5px 45%;
+    background-color: beige;
+}
+
+#form-input{
+    width: 50%;
+    margin: 0 0 0% 25%;
+    padding: 5%;
+    border-style: groove;
+    border-color: ;
+}
+
+
+#section-1{
+    background: #9FC5FA;
+    margin-bottom: 0%;
+}
+
+#section-2{
+    padding: 2%;
+    border-style: double;
+    border-color: black;
     
 }
 
-ul{
-	background-color: aliceblue;
+#section{
+    padding: 1%;
 }
 
-li{
-	display: inline;
-	padding-right: 5px;
-	color: black;
+#section button{
+    background: #3B6896;
+    color: white; 
 }
 
-#headerLogo{
-	height:100px;
-	width: 400px;
-	margin: 5px 10px;
-	background-color: white;
-}
-
-button{
-    background: #ECA52A;
-    color: white;
-    height: 30px;
+#footer{
+    height: 50px;
+    background: #3B6896;
 }

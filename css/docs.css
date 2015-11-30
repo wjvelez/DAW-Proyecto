@@ -1,0 +1,52 @@
+#img-logo{
+    width: 240px;
+    height: 150px;
+    margin: 10%;
+    background-color: beige;
+}
+
+nav{
+    margin: 14%;
+    background-color: aliceblue;
+}
+
+
+#header{
+    background-color: #9FC5FA;
+}
+
+#aside{
+    margin: 2%;
+    padding: 3% 5% 2% 5%;
+    background-color: aliceblue;
+}
+
+
+#section{
+    margin: 2%;
+    background: aliceblue; 
+}
+
+#section nav{
+    margin: 0;
+    
+}
+
+
+#aside-row1{
+    padding: 0% 0 0 0;
+}
+
+#aside-row2{
+    text-align: center;
+    padding: 0% 10% 30% 10%;
+    background-color: #93D8D0;
+    border-style: double;
+    border-color: #3B6896;
+    margin-bottom: 5%
+}
+
+#footer{
+    height: 50px;
+    background: #3B6896;
+}

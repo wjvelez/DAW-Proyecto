@@ -3,58 +3,91 @@
 
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/perfil-style.css">
+        <script src="js/bootstrap.min.js"></script>
     </head>
 
     <body>
         
-        <header>
-            <img id="headerLogo">
-			<nav>
-				<ul>
-					<li style="color:#70A2E8"><a href="index.html">Home</a></li>
-                    <li style="color:#70A2E8">Documentos</li>
-                    <li style="color:#70A2E8"><a href="ventanaEdicion.html">Nuevo Diagrama</a></li>
-					<li style="color:#70A2E8">About</li>
-				</ul>
-			</nav>
-            
-        </header>
-        <div style="text-align:center">
-            <h1>Perfil</h1>
+        <div id="header" class="row">
+            <div class="col-sm-4">
+                <img id="img-logo" class="img-responsive">
+            </div>
+            <div class="col-sm-8">
+                
+                 
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="docs.html">Documentos</a></li>
+                        <li><a href="ventanaEdicion.html">Nuevo Diagrama</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <section id="img-section">
-            <img id="perfil-img">
-            <div id="editDiv">
-                <h5>Cambiar Foto</h5>
-                <img id="editImg">
-            </div>
+        
+        <div id="section" class="row">
             
-        </section>
-        <section id="input-section">
-            <div style="float:left;margin-top:8%;width:50%">
-            <label style="margin-left:60%" for="textNombre">Nombre:</label>
-            <input id="inputName" type="text" name="textNombre" required/><br/><br/>
-            
-            <label style="margin-left:60%;margin-top:10%" for="textApellido">Apellido:</label>
-            <input id="inputApellido" type="text" name="textApellido" required/>       
-            </div>
-            
-            <div style="float:right;;margin-top:8%;width:50%">
-            <label style="margin-left:20%" for="textUsuario">Usuario:</label> <br/>
-            <input id="inputUser" type="text" name="textUsuario" required/> <br/><br/>
+            <div class="panel panel-default">
+                
+                <div class="panel-heading">
+                    <h4> Perfil</h4>
+                </div>
+                
+                <div class="panel-body">
+                    
+                    <div id="section-1" class="row">
+                        
+                            <img id="img-user" class="img-responsive">
+                            <h5 style="float:left;margin:0 0 2% 47%">Cambiar Foto</h5>
+                            <img id="img-edit" class="img-responsive">
+                        
+                    </div>
+                    
+                    <div id="section-2" class="row">
+                        <form id="form-input" role="form">
+                            <h3>Datos de Perfil</h3>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon">Nombre:</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <br><br>
+                            <div class="input-group">
+                                <span class="input-group-addon">Apellido:</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <br><br>
+                            <div class="input-group">
+                                <span class="input-group-addon">Usuario:</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <br><br>
+                            <div class="input-group">
+                                <span class="input-group-addon">Correo:</span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <br><br>
+                            <button type="button" class="btn btn-default">Guardar Cambios</button>
 
-            <label style="margin-left:20%" for="txtEmail">E-mail:</label> <br/>
-            <input id="inputEmail" type="email" name="textEmail" required/> <br/>
+                        </form>
+                    </div>
+                    
+                        
+                </div>
             </div>
             
             
-        </section>
-        <div style="text-align:center; background:#C3C5C9;border-style: solid; border-top: none;">
-            <button type="submit" style="margin:10px">Guardar Cambios</button>
         </div>
-        <footer>
-        </footer>
+        <div id="footer" class="row">
+        
+        </div>
 
     </body>
 
