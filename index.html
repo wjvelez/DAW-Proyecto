@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<title>Inicio</title>
 		<link rel="stylesheet" href="css/principal_login.css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+
 	</head>
 	<body>
 		<header>
@@ -23,15 +25,37 @@
 		
 		<aside>
 			<p>Login</p>
-			<div class="loginButton">Espol</div>
-			<div class="loginButton">Facebook</div>
-			<div class="loginButton">Twitter</div>
-			<div class="loginButton">Google</div>
-			<div class="loginButton">Microsoft</div>
+			<div class="loginButton enfasis" id="loginEspol">Espol</div>
+			<div class="loginButton enfasis">Facebook</div>
+			<div class="loginButton enfasis">Twitter</div>
+			<div class="loginButton enfasis">Google</div>
+			<div class="loginButton enfasis">Microsoft</div>
 		</aside>
 		
 		<footer>
 			<p>Sobre nosotros</p>
 		</footer>
+
+        
+        <script>
+            $(".enfasis").hover(
+                function () {
+                    $(this).css({
+                        fontWeight: "bold"
+                    })
+                },
+                function () {
+                    $(this).css({
+                        fontWeight: "normal"
+                    })
+                }
+            );
+
+            $(".loginButton").click(function () {
+                window.location = "perfil.html";
+            })
+
+
+        </script>  
 	</body>
 </html>
