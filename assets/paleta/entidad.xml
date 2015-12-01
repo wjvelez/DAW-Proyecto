@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entidad height="100" width="100" x="50" y="50" nombre="Entidad">
-    <atributo pk="false" name="Atributo">PROBANDO</atributo>
-    <atributo pk="false" name="Atributo">2</atributo>
+<entidad height="100" width="100" x="50" y="50" tableName="Entidad">
+    <atributo pk="false" name="id"></atributo>
+    <atributo pk="false" name="nombre"></atributo>
+    <atributo pk="false" name="edad"></atributo>
 </entidad>

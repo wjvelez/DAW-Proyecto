@@ -23,9 +23,25 @@
                 <p>Herramientas para el diseño</p>
                 <button id="btnEntidad">Entidad</button>
             </div>
+
             <div id="canvas">
                 <p>Area de Trabajo</p>
+
+                <!--<table class="entidad draggable" >
+                    <thead>
+                        <tr class="caption">
+                            <th class="table-name" colspan="2">Sin Titulo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sortable">
+                        <tr class="tr">
+                            <td class="pk">PK</td>
+                            <td>Atributo</td>
+                        </tr>
+                    </tbody>
+                 </table>-->
             </div>
+
             <div class ="prop">
                 <p>Opciones/Propiedades</p>
             </div>
@@ -37,7 +53,11 @@
 			<p>Sobre nosotros</p>
 		</footer>
 
+
+
         <script>
+            //Usado para identifacar a los objetos creados dinamicamente
+            var objectID = 0;
 
             $("#btnEntidad").click(function () {
                 $.ajax({
@@ -50,14 +70,59 @@
                         var height = $(xml).find("entidad").attr("height");
                         var posX = $(xml).find("entidad").attr("x");
                         var posY = $(xml).find("entidad").attr("y");
+                        var name = $(xml).find("entidad").attr("tableName");
 
-                        //prueba
-                        alert("w: " + width + ", h: " + height + ", posX: " + posX + ", posY: " + posY);
+                        var atributos = []
+
+                        $(xml).find("atributo").each(function () {
+                            atributos.push($(this).attr("name"));
+                        })
+
+                        //Crear la entidad y agregarla al area de trabajo
+                        crearNuevaEntidad(width, height, posX, posY, name, atributos);
 
                     }
                 });
             }
             );
+
+            $(".draggable").draggable();
+            $(".sortable").sortable();
+
+            var crearNuevaEntidad = function (width, height, posX, posY, name, atributos) {
+                var id = 'entidad' + objectID
+                var htmltabla = '<table class="entidad draggable" id="' + id + '"><thead><tr class="caption"><th class="table-name" colspan="2">' + name + '</th></tr></thead><tbody class="sortable">'
+
+                var i;
+                for (i = 0; i < atributos.length; i++) {
+                    var tr = '<tr class="tr"><td class="pk" style="width:10px">  </td><td>' + atributos[i] + '</td></tr>'
+                    htmltabla = htmltabla.concat(tr);
+                }
+
+                htmltabla = htmltabla.concat('</tbody></table>');
+
+                $("#canvas").append(htmltabla);
+
+                $("#" + id).draggable();
+
+                varObject++;
+
+                //<table class="entidad draggable">
+                //    <thead>
+                //        <tr class="caption">
+                //            <th class="table-name" colspan="2">Sin Titulo</th>
+                //        </tr>
+                //    </thead>
+                //    <tbody class="sortable">
+                //        <tr class="tr">
+                //            <td class="pk">PK</td>
+                //            <td>Atributo</td>
+                //        </tr>
+                //    </tbody>
+                // </table>
+
+            }
+
 
         </script>
 	</body>

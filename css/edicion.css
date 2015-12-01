@@ -52,3 +52,10 @@ footer {
     clear: both;
 }
 
+.entidad{
+    border-collapse: collapse;
+}
+
+.entidad, th, td{
+    border: 2px solid black;
+}
