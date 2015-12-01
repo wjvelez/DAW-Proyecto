@@ -19,7 +19,7 @@ section.barraH{
     overflow: hidden;
 }
 
-section.dibujo{
+section.areaTrabajo{
     background-color: coral;
 }
 
@@ -30,8 +30,8 @@ div.herr{
     height: 490px;
 }
 
-div.areaT{
-    background-color: greenyellow;
+#canvas{
+    background-color: #f8f8f8;
 	float: left;
 	width: 60%;
 	height: 490px;

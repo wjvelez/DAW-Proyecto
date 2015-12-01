@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<entidad height="100" width="100" x="50" y="50" nombre="Entidad">
+    <atributo pk="false" name="Atributo" tipo="">1</atributo>
+    <atributo pk="false" name="Atributo" tipo="">2</atributo>
+</entidad>

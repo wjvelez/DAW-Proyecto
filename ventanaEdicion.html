@@ -5,21 +5,25 @@
 		<meta charset="utf-8" />
 		<title>Inicio</title>
 		<link rel="stylesheet" href="css/edicion.css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
 	</head>
 	<body>
 		<header>
-			<h1>&lt;header> Encabezado</h1>
+			<h1>Encabezado</h1>
 		</header>
         
         <section class = "barraH">
             <p>barra de herramientas</p>
         </section>
         
-        <section class = "dibujo">
+        <section class = "areaTrabajo">
             <div class ="herr">
                 <p>Herramientas para el diseño</p>
+                <button id="btnEntidad">Entidad</button>
             </div>
-            <div class ="areaT">
+            <div id="canvas">
                 <p>Area de Trabajo</p>
             </div>
             <div class ="prop">
@@ -30,7 +34,38 @@
         
 		
 		<footer>
-			<p>&lt;footer> Sobre nosotros</p>
+			<p>Sobre nosotros</p>
 		</footer>
+
+        <script>
+
+            $("#btnEntidad").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "assets/paleta/entidad.xml",
+                    dataType: "xml",
+                    success: function (data) {
+                        var xml = $.parseXML(data);
+
+                        //PRUEBA: Debería poder cargar estos atributos, para luego usarlo en la generación dinámica de la entidad
+                        //A veces me lanza error 404, y otras veces me dice que las variables estan null 
+
+                        var width = $(xml).filter(":first").attr("width");
+                        var height = $(xml).filter(":first").attr("height");
+                        var posX = $(xml).filter(":first").attr("x");
+                        var posY = $(xml).filter(":first").attr("y");
+
+                        var pk = $(xml).find("atributo")[0]
+
+                        alert("w: " + width + ", h: " + height + ", posX: " + posX + ", posY: " + posY);
+
+                        //FIN Prueba
+                    }
+                });
+            }
+            );
+
+
+        </script>
 	</body>
 </html>
