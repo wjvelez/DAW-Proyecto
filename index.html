@@ -4,39 +4,189 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Inicio</title>
-		<link rel="stylesheet" href="css/principal_login.css" />
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+
+        <style>
+            section {
+	            float: left;
+	            width: 70%;
+	            margin: 5px 5px 5px 0px;
+	            padding: 5px 10px;
+			
+            }
+
+            aside {
+	            float: left;
+	            width: 25%;
+	            margin: 5px;
+	            padding: 5px 10px;
+            } 
+           
+            .navbar-brand {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                width: 100%;
+            }
+            
+            #topContainer {
+                background-color: #A7DBDB;
+            }
+            
+            #infoContainer{
+                background-color: #69D2E7;
+            }
+            
+            #topRow {
+                margin-top: 100px;
+                text-align: center;
+            }
+            
+            #topRow h1 {
+                font-size: 300%;
+            }            
+            
+            .bold {
+                font-weight: bold;
+            }
+            
+            .marginTop{
+                margin-top: 30px;
+            }
+            
+            .marginBottom{
+                margin-bottom: 30px;
+            }
+            
+            .center {
+                text-align: center;
+            }
+            
+            .title{
+                margin-top: 100px;
+                font-size: 300%;
+            }
+            
+            footer{
+                background-color: #F38630;
+                padding-top: 70px;
+            }
+            
+        </style>
 
 	</head>
 	<body>
 		<header>
-			<img id="headerLogo"/>
-			<nav>
-				<ul>
-					<li>About</li>
-				</ul>
-			</nav>
+
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-toggle="collapse"
+                         data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>                    
+                        <a class="navbar-brand">Design.er</a>        
+                    </div>
+                    
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a>About</a></li>
+                            <li><a>Examples</a></li>
+                        </ul>
+                    </div>                
+                </div>
+            </div>
+	
 		</header>			
 		
 		<section>
-			<p>Sobre la Aplicaci&oacute;n</p>
+			<div class="container contentContainer" id="topContainer">
+                <div class="col-md-6 col-md-offset-3" id="topRow">
+                    <h1 class="marginTop">Modela a un nuevo nivel</h1>
+                    
+                    <p class="lead">Crear diagramas entidad-relación nunca había sido tan fácil.</p>
+                </div>
+            </div>
+
+
+            <div class="container contentContainer" id="infoContainer">
+                <div class="row center">
+                    <h1 class="center title">Por que usar la App</h1>
+                    <p class="lead center">Resumen de caracteristicas</p>
+                </div>
+                
+                <div class="row center">
+                    <div class="col-md-4 marginTop">
+                        <h2>Caracteristica 1</h2>
+                        <p>Descripcion de la funcionalidad</p>
+                    </div>
+
+                    <div class="col-md-4 marginTop">
+                        <h2>Caracteristica 2</h2>
+                        <p>Descripcion de la funcionalidad</p>
+                    </div>
+
+                    <div class="col-md-4 marginTop">
+                        <h2>Caracteristica 1</h2>
+                        <p>Descripcion de la funcionalidad</p>
+                    </div>
+                </div>
+                            
+            </div>
+
+		    <footer>
+			    <div class="container contentContainer" id="footer">
+                    <h1 class="center title">Sobre Nosotros</h1>
+                    <p class="lead center">Informacion sobre nosotros</p>
+                </div>
+		    </footer>
+
 		</section>
 		
 		<aside>
-			<p>Login</p>
-			<div class="loginButton enfasis" id="loginEspol">Espol</div>
-			<div class="loginButton enfasis">Facebook</div>
-			<div class="loginButton enfasis">Twitter</div>
-			<div class="loginButton enfasis">Google</div>
-			<div class="loginButton enfasis">Microsoft</div>
+            <div class="row center">
+                <div class="center title">Log In</div>
+            </div>
+            
+            <div class="row center">
+                <div class="col-md-12 marginTop">
+                    <button class="loginButton btn" id="loginEspol">Espol</button>
+                </div>
+
+                <div class="col-md-12 marginTop">
+                    <button class="loginButton btn" id="loginEspol">Facebook</button>
+                </div>
+
+                <div class="col-md-12 marginTop">
+                    <button class="loginButton btn" id="loginEspol">Twitter</button>
+                </div>
+
+                <div class="col-md-12 marginTop">
+                    <button class="loginButton btn" id="loginEspol">Google</button>
+                </div>
+
+                <div class="col-md-12 marginTop">
+                    <button class="loginButton btn" id="loginEspol">Microsoft</button>
+                </div>
+            </div>              
 		</aside>
 		
-		<footer>
-			<p>Sobre nosotros</p>
-		</footer>
 
-        
+
+
+
+        <!--Scripts-->
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+
         <script>
+            $(".contentContainer").css("min-height", $(window).height())
+
             $(".enfasis").hover(
                 function () {
                     $(this).css({
