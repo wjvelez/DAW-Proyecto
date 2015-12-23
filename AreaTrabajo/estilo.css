@@ -1,0 +1,70 @@
+
+header{
+    background: aqua;
+}
+
+footer{
+    background: brown;
+    color: white;
+}
+
+#paleta{
+    color: white;
+    background: cornflowerblue;
+    
+}
+
+#lienzo{ 
+    color:white;
+    background: darkgray;
+    height: 100%;
+    position: relative;
+}
+
+#sidebar{
+    color: white;
+    background: darkcyan;
+        
+}
+
+#principal{
+    
+}
+
+button{
+    color:black;
+}
+
+.entidad{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: aqua;
+    left: 50px;
+    top:50px;
+    cursor: move; 
+    border-radius: 5%;
+    -webkit-transition: transform 0.3s,background 0.3s,border 0.1s,border-radius 0.2s;
+}
+
+.entidad:hover{
+    transform: scale(1.5,1.0);
+    background: chartreuse;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.nombreEntidad{
+    height: 40px;
+    background: black;
+    color:aliceblue;
+    text-align: center;
+}
+
+.elementoEntidad{
+    height: 20px;
+    background:  darkcyan;
+    color:chocolate;
+    text-align: center;
+}
+
