@@ -56,6 +56,10 @@ footer {
     border-collapse: collapse;
 }
 
+.entidad{
+    cursor: move;
+}
+
 .entidad, th, td{
     border: 2px solid black;
 }
