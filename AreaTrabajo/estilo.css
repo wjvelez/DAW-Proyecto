@@ -4,6 +4,7 @@ header{
 }
 
 footer{
+    clear: both;
     background: brown;
     color: white;
 }
@@ -24,6 +25,7 @@ footer{
 #sidebar{
     color: white;
     background: darkcyan;
+    height: 100%;
         
 }
 
