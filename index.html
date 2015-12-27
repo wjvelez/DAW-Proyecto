@@ -71,18 +71,18 @@
                         <h2>Crea, guarda y comparte tus diagramas entidad-relacion</h2>
                         <h3>Con&eacute;ctate para empezar:</h3>
                         <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
+                        <ul id="socialList" class="list-inline intro-social-buttons">
                             <li>
-                                <a href="perfil.html" class="btn btn-default btn-lg"><i  class="icon-espol"></i> <span class="network-name">ESPOL</span></a>
+                                <a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal"><i  class="icon-espol" ></i> <span class="network-name" >espol</span></a>
                             </li>
                             <li>
-                                <a href="perfil.html" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                                <a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">facebook</span></a>
                             </li>
                             <li>
-                                <a href="perfil.html" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                <a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">twitter</span></a>
                             </li>
                             <li>
-                                <a href="perfil.html" class="btn btn-default btn-lg"><i class="fa fa-google fa-fw"></i> <span class="network-name">google</span></a>
+                                <a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal"><i class="fa fa-google fa-fw"></i> <span class="network-name">google</span></a>
                             </li>
                         </ul>
                     </div>
@@ -96,6 +96,59 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
+    
+    
+
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header login_modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">Iniciar sesi&oacute;n</h3>
+                </div>
+                
+                <div class="modal-body login-modal">
+                    <br/>
+                    <div class="clearfix"></div>
+                    <div id='social-icons-conatainer'>
+                        <div class='modal-body-left'>
+                            <div class="form-group">
+                                <input type="text" id="username" placeholder="Correo" value="" class="form-control login-field">
+                                <i class="fa fa-user login-field-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" id="login-pass" placeholder="contraseña" value="" class="form-control login-field">
+                                <i class="fa fa-lock login-field-icon"></i>
+                            </div>
+
+                            <a href="perfil.html" id="login-button" class="btn btn-success modal-login-btn">Iniciar</a>
+                            
+                        </div>
+
+                        <div class='modal-body-right'>
+                            <div id="socialDiv" class="modal-social-icons">
+                                <a href='perfil.html' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Iniciar con Facebook </a>
+                                <a href='perfil.html' class="btn btn-default twitter"> <i class="fa fa-twitter modal-icons"></i> Iniciar con Twitter </a>
+                                <a href='perfil.html' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Iniciar con Google </a>
+                                <a href='perfil.html' class="btn btn-default espol"> <i></i> Iniciar con ESPOL </a>
+                            </div> 
+                        </div>	
+                    
+                    </div>																												
+                    <div class="clearfix"></div>
+
+                </div>
+                <div class="clearfix"></div>
+                <div class="modal-footer login_modal_footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
 
 	<a  name="about"></a>
     <div class="content-section-a">
@@ -190,12 +243,47 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     
     <script>
+        var socialList;
+        function hasClass(a,string){
+            clases = a.classList;
+            for(j=0;j<clases.length;j++){
+                if(clases[j] == string){
+                    return true;
+                }
+            }    
+            return false;
+        }
+        
+        function showButtons(string,buttons){
+            for(i=0;i<buttons.length;i++){
+                if(hasClass(buttons[i],"hide-button") &&
+                   hasClass(buttons[i],string)==false)
+                   buttons[i].classList.remove("hide-button");
+            }
+        }
+                
+        function hideButton(){
+            var i, div, buttons, string;
+            current=this;
+            span = current.getElementsByTagName("span")[0];
+            string = span.innerHTML.toString();
+            div = document.getElementById("socialDiv");
+            buttons = div.getElementsByTagName("a");
+            for(i=0;i<buttons.length;i++){
+                if(hasClass(buttons[i],string))
+                    buttons[i].classList.add("hide-button");
+            }
+            showButtons(string,buttons);
+            document.getElementById("login-button").
+            innerHTML = "Iniciar con "+string;
+        }
+        
         function cambiarSeleccionado(evt) {
             li = this;
             menu = document.getElementById("menu");
@@ -203,7 +291,7 @@
 
             for(i=0;i<items.length;i++){
                 if(items[i].hasAttribute("class"))
-                items[i].removeAttribute("class");
+                    items[i].removeAttribute("class");
             }
             
             if(li.getAttribute("id")!="brand-nav"){
@@ -213,6 +301,8 @@
 
         function registrarEventos(){
             var menu, items;
+            slist = document.getElementById("socialList");
+            itemsb = slist.getElementsByTagName("li");
             menu = document.getElementById("menu");
             menuf = document.getElementById("menu-footer");
             items = menu.getElementsByTagName("li");
@@ -226,6 +316,11 @@
             for(i=0;i<itemsf.length;i++){
                 itemsf[i].addEventListener("click", cambiarSeleccionado, false);
             }
+            
+            for(i=0;i<itemsb.length;i++){
+                itemsb[i].addEventListener("click", hideButton, false);
+            }
+              
         }
 
         window.addEventListener("load", registrarEventos, false);
