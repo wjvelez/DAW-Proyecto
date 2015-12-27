@@ -1,70 +1,75 @@
-#img-logo{
-    width: 240px;
-    height: 150px;
-    margin: 10%;
-    background-color: beige;
+html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    background: url(../img/intro-bck2.jpg);
 }
 
-nav{
-    margin: 14%;
-    background-color: #D8D8D8;
+#example {
+    padding-top: 1em;
+}
+nav a{
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+#profile {
+    position: relative;
 }
 
-
-#header{
-    background-color: aliceblue;
+.ra-well-title {
+    font-size: 1.2857em;
+    line-height: 1.2857em;
+    border-bottom: 1px solid #e7e7e7;
+    margin: -5px -19px 0.8333em;
+    padding: 0 19px 0.7222em;
+    background-color:  #E6EEF1;
 }
 
-#section .panel-heading{
-    background: #3B6896;
-    color: aliceblue;
+.ra-avatar {
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    margin-left: 1em;
+    display: inline;
+}
+
+.ra-first-name {
+    display: block;
+    margin-top: 0.8571em;
+    margin-left: 1em;
+}
+
+.ra-last-name {
+    display: block;
+    font-size: 1.7143em;
+    line-height: 1.3em;
+    margin-left: 0.5em;
+}
+
+.ra-position {
+    font-size: 0.8571em;
+    color: #999;
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.buttons-wrap {
+    border-top: 1px solid #e7e7e7;
+    padding-top: .5em;
+    text-align: right;
+}
+
+#example{
+    margin: 7em;
+}
+
+.center{
     text-align: center;
 }
 
-#section .panel-body{
-    background-color: aliceblue;
-    text-align: center;
-    padding: 2%;
+.btn-default{
+    background: transparent;
 }
 
-#img-user{
-    width: 180px;
-    height: 180px;
-    margin: 1% 0% 5px 45%;
-    background-color: beige;
-}
-
-#form-input{
-    width: 50%;
-    margin: 0 0 0% 25%;
-    padding: 5%;
-    border-style: groove;
-    border-color: ;
-}
-
-
-#section-1{
-    background: #9FC5FA;
-    margin-bottom: 0%;
-}
-
-#section-2{
-    padding: 2%;
-    border-style: double;
-    border-color: black;
-    
-}
-
-#section{
-    padding: 1%;
-}
-
-#section button{
-    background: #3B6896;
-    color: white; 
-}
-
-#footer{
-    height: 50px;
-    background: #3B6896;
+.navbar-brand {
+    font-size: 1.8em;
 }

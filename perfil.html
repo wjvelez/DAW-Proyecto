@@ -6,89 +6,167 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/perfil-style.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.common-bootstrap.min.css" />
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.bootstrap.min.css" />
+        
     </head>
 
     <body>
         
-        <div id="header" class="row">
-            <div class="col-sm-4">
-                <img id="img-logo" class="img-responsive">
-            </div>
-            <div class="col-sm-8">
-                
-                 
-                <nav class="navbar">
-                    <div class="container-fluid">
+            <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+            <div id="topnav" class="container topnav">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand topnav" href="index.html" id="brand-nav">Design.er</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right " id="menu" >
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Documentos</a>
+                        </li>
+                        <li>
+                            <a href="#">Area de trabajo</a>
+                        </li>
                         
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="docs.html">Documentos</a></li>
-                        <li><a href="AreaTrabajo/index.html">Nuevo Diagrama</a></li>
-                        <li><a href="#">About</a></li>
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <span class="glyphicon glyphicon-user"></span><b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu">
+                               <li><a href="index.html">Salir</a></li>
+                           </ul>
+                       </li>
                     </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        
-        <div id="section" class="row">
-            
-            <div class="panel panel-default">
-                
-                <div class="panel-heading">
-                    <h4> Perfil</h4>
                 </div>
-                
-                <div class="panel-body">
-                    
-                    <div id="section-1" class="row">
-                        
-                            <img id="img-user" class="img-responsive">
-                            <h5 style="float:left;margin:0 0 2% 47%">Cambiar Foto</h5>
-                            <img id="img-edit" class="img-responsive">
-                        
-                    </div>
-                    
-                    <div id="section-2" class="row">
-                        <form id="form-input" role="form">
-                            <h3>Datos de Perfil</h3>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Nombre:</span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <br><br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Apellido:</span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <br><br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Usuario:</span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <br><br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Correo:</span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <br><br>
-                            <button type="button" class="btn btn-default">Guardar Cambios</button>
-
-                        </form>
-                    </div>
-                    
-                        
-                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            
-            
-        </div>
-        <div id="footer" class="row">
+            <!-- /.container -->
+        </nav>
         
-        </div>
+        
+        <div id="example" class="row">
+            <div class="col-sm-1"></div>
+            
+            <div class="col-sm-10">
+            
+                <div class="row clearfix">
+                    <section id="profile" class="well">
+                                <h2 class="ra-well-title">Perfil</h2>
 
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-3">
+                                        <div class="row center">
+                                            <img src="img/profile.jpg" class="ra-avatar img-responsive" />
+                                        </div>
+                                        <div class="row center">
+                                            <label>Cambiar Foto</label>
+                                            <button type="button" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-sm-3">
+                                        <span class="ra-first-name">Nombre</span>
+                                        <span class="ra-last-name">Apellido</span>
+                                        <div class="ra-position">Usuario</div>
+                                    </div>
+                                </div>
+                    </section>
+                </div>
+
+
+                <div class="row clearfix">
+                    <section class="well">
+                            <h2 class="ra-well-title">Configuraci&oacute;n de Datos</h2>
+
+                            <div class="form-horizontal form-widgets col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="name">Nombre</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <input id="name" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="user">Nombre de usuario</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <input id="name" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="birthday">Fecha de nacimiento</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <input type="date" value="10/09/1979" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="gender">G&eacute;nero</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <select id="gender">
+                                            <option selected>Masculino</option>
+                                            <option>Femenino</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-horizontal form-widgets col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="occupation">Apellido</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <input id="occupation" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="skills">Correo</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        <input id="mail" type="email" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="bio">Biografia</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="bio"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="form-horizontal form-widgets col-sm-12">
+
+                            </div>
+
+                            <div class="buttons-wrap">
+                                <button class="k-button k-state-default">Cancelar</button>
+                                <button class="k-button k-state-default">Actualizar</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            <div class="col-sm-1"></div>
+            
+        </div>
     </body>
 
 </html>
