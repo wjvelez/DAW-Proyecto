@@ -1,0 +1,83 @@
+
+section{
+    
+    width: 500px;
+    height: 600px;
+    background: blue;
+    
+}
+
+
+#midiv{
+ position: absolute;
+width: 400px;
+height: 500px;
+background: green;
+left: 10px;
+    top: 10px;
+
+    
+    
+}
+
+input{
+    background: rgba(0,0,0,.1);
+    border:none;
+    font-family: verdana;
+    font-weight:bold;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    
+   
+
+}
+
+svg{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background: orange;
+    left: 0px;
+    
+}
+
+
+#bola{
+   fill:pink;
+    stroke:red;
+    fill-opacity:0.7;
+    transition: transform 0.4s;
+    
+    
+}
+
+#bola:hover{
+    fill:black;
+    stroke:lime;
+    transform: scale(1.5,1.5) translate(50px,50px);
+
+    
+}
+
+.textoEntidad{
+    font-family: verdana;
+    font-weight: bold;
+    fill: white;
+    font-size: 16px;
+    background: rgba(0,0,0,.0);
+    border:none;
+    color: white;
+   
+    
+}
+
+.textoElemento{
+    font-family: cursive;
+    fill:black;
+    font-size: 16px;
+    background: rgba(0,0,0,.0);
+    border: none;
+    color: red;
+    
+}
