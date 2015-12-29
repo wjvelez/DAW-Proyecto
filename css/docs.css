@@ -1,52 +1,53 @@
-#img-logo{
-    width: 240px;
-    height: 150px;
-    margin: 10%;
-    background-color: beige;
+body, html {
+    width: 100%;
+    height: 100%;
 }
 
-nav{
-    margin: 14%;
-    background-color: aliceblue;
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
 }
 
-
-#header{
-    background-color: #9FC5FA;
+h2{
+    font-weight: 500;
 }
 
-#aside{
-    margin: 2%;
-    padding: 3% 5% 2% 5%;
-    background-color: aliceblue;
+nav a{
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
 }
 
 
-#section{
-    margin: 2%;
-    background: aliceblue; 
-}
 
-#section nav{
-    margin: 0;
-    
-}
-
-
-#aside-row1{
-    padding: 0% 0 0 0;
-}
-
-#aside-row2{
+footer {
     text-align: center;
-    padding: 0% 10% 30% 10%;
-    background-color: #93D8D0;
-    border-style: double;
-    border-color: #3B6896;
-    margin-bottom: 5%
+    padding: 50px 0;
+    background-color: #4B4C4C;
+    background: url(../img/intro-bck2.jpg);
 }
 
-#footer{
-    height: 50px;
-    background: #3B6896;
+p.copyright {
+    margin: 15px 0 0;
 }
+
+.navbar-brand {
+    font-size: 1.8em;
+}
+
+footer .list-inline{
+    color: white;
+}
+
+#menuHerr{
+    margin-top: 50px;
+    align-content: center;
+    height: 1px;
+}
+
+.main{
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+

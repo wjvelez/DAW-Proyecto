@@ -1,0 +1,175 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+nav a{
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    background: url(../img/intro-bck2.jpg);
+    opacity:0.;            
+    background-size: cover;
+}
+
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color:#E6EEF1;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+#f8f8f8
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #4B4C4C;
+    background: url(../img/intro-bck2.jpg);
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.navbar-brand {
+    font-size: 1.8em;
+}
+
+footer .list-inline{
+    color: white;
+}
+
+.login_modal_footer{margin-top:5px;}
+
+.login_modal_header .modal-title {text-align: center;font-
+    family:'Philosopher',sans-serif; }
+
+.form-group{position: relative;}
+
+.form-group .login-field-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    transition: all 0.25s ease 0s;
+    padding-top: 2%;
+}
+
+.login-modal{
+    width:100%;
+    padding-bottom:20px;
+}
+
+.login_modal_header, .login_modal_footer {background-color:#E6EEF1 !important;color:dimgrey;}
+
+.login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
+
+.modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
+
+.modal-body-right{float:right; width:47%;}
+
+.modal-social-icons{padding:0 10%;}
+
+.modal-icons{margin-left: -10px; margin-right: 20px;}
+
+#social-icons-conatainer{position: relative;}
+
+#center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  
+
+
+border: 4px solid #DDDDDD;border-radius: 20px;}
+.modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
+
+.hide-button{
+    display: none;
+}
