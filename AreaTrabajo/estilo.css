@@ -1,44 +1,30 @@
-header{
-    background: aqua;
-}
-
-
-section{
-    margin-top: 0px;
-}
-
-footer{
-    clear: both;
-    background: brown;
-    color: white;
-}
-
 #paleta{
     color: white;
     background: cornflowerblue;
-    
+    padding: 10 10 10 10;
+    height: 100%;
+    padding: 20px 10px 10px 10px;
+    margin: auto;
 }
 
 #lienzo{ 
     color:white;
     background: darkgray;
     height: 100%;
-    position: relative;
+    padding: 20px 10px 10px 10px;
+
 }
 
 #sidebar{
     color: white;
     background: darkcyan;
     height: 100%;
-        
+    padding: 20px 10px 10px 10px;
+    
 }
 
 #principal{
     
-}
-
-button{
-    color:black;
 }
 
 .entidad{
@@ -75,7 +61,6 @@ button{
 }
 
 
-
 body, html {
     width: 100%;
     height: 100%;
@@ -86,19 +71,19 @@ body, h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+h2{
+    font-weight: 500;
+}
+
 nav a{
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
-.topnav {
-    font-size: 14px; 
-}
 
 footer {
     text-align: center;
-    
-    padding: 15px 0;
+    padding: 30px 0;
     background-color: #4B4C4C;
     background: url(../img/intro-bck2.jpg);
 }
@@ -115,6 +100,18 @@ footer .list-inline{
     color: white;
 }
 
+.main{
+    padding: 0px;
+    margin-top: 50px;
+}
 
+.col-md-2 {
+    display: table-cell;
+    float: none; 
+}
+.col-md-8 {
+    display: table-cell;
+    float: none; 
+}
 
 
