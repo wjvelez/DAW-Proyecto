@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+
+        <link rel="stylesheet" type="text/css" href="../JointJs/joint.css" />
+        <script src="../JointJs/jquery.min.js"></script>
+        <script src="../JointJs/lodash.min.js"></script>
+        <script src="../JointJs/backbone-min.js"></script>
+        <script src="../JointJs/joint.js"></script>
+        <script src="../JointJs/joint.shapes.erd.js"></script>
+        <script src="../JointJs/joint.shapes.uml.js"></script>
+
+        <style>
+            #myHolder{
+                /*background-color: #A7DBDB;*/
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="myholder"></div>
+        
+
+        <!--<script>
+            windowHeight = $(window).height();
+            $("#myholder").css("min-height", windowHeight);
+            
+            //JointJS
+
+            //Hello World
+            var graph = new joint.dia.Graph;
+
+            var paper = new joint.dia.Paper({
+                el: $('#myholder'),
+                width: $('#myholder').css('width'),
+                height: $('#myholder').css('height'),
+                model: graph,
+                gridSize: 1
+            });
+
+            var rect = new joint.shapes.basic.Rect({
+                position: { x: 100, y: 30 },
+                size: { width: 100, height: 30 },
+                attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white'} }
+            });
+
+            var rect2 = rect.clone();
+            rect2.translate(300);
+
+            var link = new joint.dia.Link({
+                source: { id: rect.id },
+                target: { id: rect2.id }
+            });
+
+            graph.addCells([rect, rect2, link]);
+
+            //Event Handling
+
+            //graph.on('all', function (eventName, cell) {
+            //    console.log(arguments);
+            //})
+
+            rect.on('change:position', function (element) {
+                console.log(element.id, ':', element.get('position'));
+            });
+
+            //Element Styling
+
+            rect.attr({
+                rect: { fill: '#2C3E50', rx: 5, ry: 5, 'stroke-width': 2, stroke: 'black' },
+                text: {
+                    text: 'my label', fill: '#3498DB', 'font-size': 18, 'font-weight': 'bold',
+                    'font-variant': 'small-caps', 'text-transform': 'capitalize'
+                }
+            });
+
+            // Link Styling
+
+            link.attr({
+                '.connection': { stroke: 'blue' },
+                '.marker-source': { fill: 'red', d: 'M 10 0 L 0 5 L 10 10 z' },
+                '.marker-target': { fill: 'yellow', d: 'M 10 0 L 0 5 L 10 10 z' }
+            });
+
+            link.set('smooth', true);
+
+
+            // Creating Custom Elements
+
+            //joint.shapes.basic.Entity = joint.shapes.basic.Generic.extend({
+                //markup: '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>'
+            //})
+
+            // Using HTML in JointJS Elements
+
+
+        </script>-->
+
+        <!-- UML... -->
+        <script>
+            /*
+            Extension de JointJS para la aplicacion
+            */
+
+            joint.shapes.dsnr = {};
+            joint.shapes.dsnr.Entity = joint.shapes.basic.Generic.extend({
+                markup: [
+                    '<g class="rotatable">',
+                      '<g class="scalable">',
+                        '<rect class="dsnr-entity-name-rect"/><rect class="dsnr-entity-attrs-rect"/>',
+                      '</g>',
+                      '<text class="dsnr-entity-name-text"/><text class="dsnr-entity-attrs-text"/>',
+                    '</g>'
+                ].join(''),
+
+                defaults: joint.util.deepSupplement({
+
+                    type: 'dsnr.Entity',
+
+                    attrs: {
+                        rect: { 'width': 200 },
+                        '.dsnr-entity-name-rect': { 'stroke': 'black', 'stroke-width': 2, 'fill': '#3498db' },
+                        '.dnsr-entity-attrs-rect': { 'stroke': 'black', 'stroke-width': 2, 'fill': '#2980b9' },
+                        '.dsnr-entity-name-text': {
+                            'ref': '.dsnr-entity-name-rect', 'ref-y': .5, 'ref-x': .5, 'text-anchor': 'middle', 'y-alignment': 'middle', 'font-weight': 'bold',
+                            'fill': 'black', 'font-size': 12, 'font-family': 'Times New Roman'
+                        },
+                        '.dsnr-entity-attrs-text': {
+                            'ref': '.dsnr-entity-attrs-rect', 'ref-y': 5, 'ref-x': 5,
+                            'fill': 'black', 'font-size': 12, 'font-family': 'Times New Roman'
+                        }
+                    },
+
+                    name: [],
+                    attributes: []
+
+                }, joint.shapes.basic.Generic.prototype.defaults),
+
+                initialize: function () {
+                    this.on('change:name change:attributes', function () {
+                        this.updateRectangles();
+                        this.trigger('dsnr-update');
+                    }, this);
+                    this.updateRectangles();
+                    joint.shapes.basic.Generic.prototype.initialize.apply(this, arguments);
+                },
+
+                getClassName: function () {
+                    return this.get('name');
+                },
+
+                updateRectangles: function () {
+                    var attrs = this.get('attrs');
+                    var rects = [
+                        { type: 'name', text: this.getClassName() },
+                        { type: 'attrs', text: this.get('attributes') }
+                    ];
+
+                    var offsetY = 0;
+
+                    _.each(rects, function (rect) {
+                        var lines = _.isArray(rect.text) ? rect.text : [rect.text];
+                        var rectHeight = lines.length * 20 + 20;
+                        attrs['.dsnr-entity-' + rect.type + '-text'].text = lines.join('\n');
+                        attrs['.dsnr-entity-' + rect.type + '-rect'].height = rectHeight;
+                        attrs['.dsnr-entity-' + rect.type + '-rect'].transform = 'translate(0,' + offsetY + ')';
+                        offsetY += rectHeight;
+                    });
+                }
+
+
+
+            });
+
+            joint.shapes.dsnr.EntityView = joint.dia.ElementView.extend({
+                initialize: function () {
+                    joint.dia.ElementView.prototype.initialize.apply(this, arguments);
+                    this.listenTo(this.model, 'dsnr-update', function () {
+                        this.update();
+                        this.resize();
+                    });
+                },
+
+                pointerclick: function (evt, x, y) {
+                    console.log(arguments);
+                    this.notify('cell:pointerdblclick', evt, x, y);
+                }
+            });
+
+
+
+
+            // Prueba de la extension
+
+            windowHeight = $(window).height();
+            $("#myholder").css("min-height", windowHeight);
+
+            var graph = new joint.dia.Graph();
+
+            var paper = new joint.dia.Paper({
+                el: $('#myholder'),
+                width: 800,
+                height: 600,
+                model: graph,
+                gridSize: 1
+            });
+
+            var dsnr = joint.shapes.dsnr;
+
+            var entities = {
+
+                cliente: new dsnr.Entity({
+                    position: { x: 300, y: 50 },
+                    size: { width: 240, height: 100 },
+                    name: 'Cliente',
+                    attributes: ['id', 'nombre', 'apellido', 'edad', 'telefono'],
+                    attrs: {
+                        '.dsnr-entity-name-rect': {
+                            fill: '#feb662',
+                            stroke: '#ffffff',
+                            'stroke-width': 0.5
+                        },
+                        '.dsnr-entity-attrs-rect': {
+                            fill: '#fdc886',
+                            stroke: '#fff',
+                            'stroke-width': 0.5
+                        },
+                        '.dsnr-entity-attrs-text': {
+                            ref: '.dsnr-entity-attrs-rect',
+                            'ref-y': 0.5,
+                            'y-alignment': 'middle'
+                        }
+                    }
+                })
+            };
+
+
+            _.each(entities, function (c) { graph.addCell(c); });
+
+            // otros rects
+            var rect = new joint.shapes.basic.Rect({
+                position: { x: 100, y: 30 },
+                size: { width: 100, height: 30 },
+                attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white'} }
+            });
+
+            graph.addCells([rect]);
+
+
+            // Manejo de Eventos
+
+            //graph.on('all', function (eventName, cell) {
+            //    console.log(arguments);
+            //});
+
+            //paper.on('cell:pointerdblclick', function(cellView, evt, x, y))
+            //paper.on('cell:pointerdblclick', function (evt, x, y) {
+            //    console.log('Doble clic');
+            //});
+        </script>
+    </body>
+</html>
